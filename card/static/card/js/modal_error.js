@@ -1,0 +1,1 @@
+new bootstrap.Modal(document.querySelector("#model_error")).show();
