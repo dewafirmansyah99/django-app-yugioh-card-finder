@@ -191,6 +191,7 @@ python manage.py migrate
 ```
 Setting URL in directory file ***yugioh(project folder)*** / ***yugioh(app folder)*** / ***urls.py***
 ```sh
+from django.urls import path, include, re_path
 from card import views as card_views
 
 urlpatterns = [
@@ -198,6 +199,18 @@ urlpatterns = [
     path('card/kartu', card_views.another_page),
     path('card/love', card_views.insert_favorite_to_bucket),
     path('card/trash', card_views.delete_favorite_from_bucket),
+]
+```
+Setting APP & static file ***yugioh(project folder)*** / ***yugioh(app folder)*** / ***settings.py***<br/>
+Register APP in ***INSTALLED_APPS***
+```sh
+'card'
+```
+Set Static File Directory
+```sh
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / 'static'
 ]
 ```
 Open Localhost URL in your browser
